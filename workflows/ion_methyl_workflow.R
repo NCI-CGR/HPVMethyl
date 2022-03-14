@@ -99,7 +99,7 @@ drake::make(ion_plan)
 
 #### E. make html block for torrent server ####
 html_block = if ( command_line_args$is_torrent_server == "yes") {
-    render("/TypeSeqHPVMethyl/inst/methylation/torrent_server_html_block.R",
+    render("/TypeSeqHPV-Methyl/inst/methylation/torrent_server_html_block.R",
            output_dir = "./")}
 
 
