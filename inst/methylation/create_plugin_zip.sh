@@ -1,11 +1,17 @@
-rm -R TypeSeqHPVMethyl-Dev
-mkdir TypeSeqHPVMethyl-Dev
+#!/usr/bin/env bash
+
+### inst/methylation/create_plugin_zip.sh TypeSeqHPV-Methyl.1_0_0.zip 
+zip_fn=$1
+
+rm -fr TypeSeqHPV-Methyl
+mkdir -p TypeSeqHPV-Methyl
 
 # ion torrent plugin specific files
-cp inst/methylation/instance.html TypeSeqHPVMethyl-Dev/
-cp inst/methylation/launch.sh TypeSeqHPVMethyl-Dev/
-cp inst/methylation/plan.html TypeSeqHPVMethyl-Dev/
-cp inst/methylation/pluginsettings.json TypeSeqHPVMethyl-Dev/
+cp inst/methylation/instance.html TypeSeqHPV-Methyl/
+cp inst/methylation/launch.sh TypeSeqHPV-Methyl/
+cp inst/methylation/plan.html TypeSeqHPV-Methylv/
+cp inst/methylation/pluginsettings.json TypeSeqHPV-Methyl/
 
-# zip plugin package
-zip -r TypeSeqHPVMethyl-Dev_Plugin.zip TypeSeqHPVMethyl-Dev
+# zip plugin package (change the target zip file name accordinlgy)
+zip -r $zip_fn  TypeSeqHPV-Methyl
+rm -fr TypeSeqHPV-Methyl
