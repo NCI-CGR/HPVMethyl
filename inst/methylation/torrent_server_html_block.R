@@ -1,5 +1,5 @@
 #' ---
-#' title: TypeSeq HPV Methylation Plugin
+#' title: HPV Methylation Plugin
 #' author: " "
 #' date: "`r format(Sys.time(), '%d %B, %Y')`"
 #' output:
@@ -45,7 +45,7 @@ cat('
 
 [non-target variant results](./non_target_variants_results.csv)
 
-[archive of outputs](./TypeSeqHPVMethyl_outputs.zip)
+[archive of outputs](./HPVMethyl_outputs.zip)
 
 
 

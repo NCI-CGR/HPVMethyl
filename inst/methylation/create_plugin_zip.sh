@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
-### inst/methylation/create_plugin_zip.sh TypeSeqHPV-Methyl.1_0_0.zip 
-zip_fn=$1
+# Example usage:
+# inst/methylation/create_plugin_zip.sh  HPVMethyl HPVMethyl.1_0_0.zip
+# inst/methylation/create_plugin_zip.sh  HPVMethyl-dev HPVMethyl-dev.1_0_0.zip
 
-rm -fr TypeSeqHPV-Methyl
-mkdir -p TypeSeqHPV-Methyl
+zip_dir=$1
+zip_fn=$2
+
+rm -fr $zip_dir
+mkdir -p $zip_dir
 
 # ion torrent plugin specific files
-cp inst/methylation/instance.html TypeSeqHPV-Methyl/
-cp inst/methylation/launch.sh TypeSeqHPV-Methyl/
-cp inst/methylation/plan.html TypeSeqHPV-Methylv/
-cp inst/methylation/pluginsettings.json TypeSeqHPV-Methyl/
+cp inst/methylation/{instance.html,launch.sh,plan.html,pluginsettings.json} $zip_dir
 
 # zip plugin package (change the target zip file name accordinlgy)
-zip -r $zip_fn  TypeSeqHPV-Methyl
-rm -fr TypeSeqHPV-Methyl
+zip -r $zip_fn  $zip_dir
+rm -fr $zip_dir

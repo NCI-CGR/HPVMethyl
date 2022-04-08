@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-# TypeSeq HPV Methyl
+# HPV Methyl
 VERSION="1.0.0"
 #autorundisable
 echo Pipeline version $VERSION
@@ -8,8 +8,8 @@ echo Pipeline version $VERSION
 ln ../../*.bam ./
 
 docker run -i -v $(pwd):/mnt -v /mnt:/user_files \
-    cgrlab/typeseqhpv-methyl:v1.0.0 \
-        Rscript /TypeSeqHPV-Methyl/workflows/ion_methyl_workflow.R \
+    cgrlab/hpvmethyl:dev_v1.0.0 \
+        Rscript /HPVMethyl/workflows/ion_methyl_workflow.R \
         --is_torrent_server yes \
         --config_file config_file.csv \
         --barcode_file barcodes.csv \

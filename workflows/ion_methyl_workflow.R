@@ -1,5 +1,5 @@
 #### A. load packages ####
-library(TypeSeqHPVMethyl)
+library(HPVMethyl)
 library(drake)
 library(tidyverse)
 library(parallel)
@@ -83,7 +83,7 @@ variants_final_table = single_bar_methyl_variant_filter(variant_table,
                                       user_files$manifest,
                                       user_files$control_definitions, 
                                       user_files$control_freq) %T>%
-  map_df(~ system("zip -j TypeSeqHPVMethyl_outputs.zip read_summary.csv *results.csv"))
+  map_df(~ system("zip -j HPVMethyl_outputs.zip read_summary.csv *results.csv"))
 
 )
 
@@ -99,7 +99,7 @@ drake::make(ion_plan)
 
 #### E. make html block for torrent server ####
 html_block = if ( command_line_args$is_torrent_server == "yes") {
-    render("/TypeSeqHPV-Methyl/inst/methylation/torrent_server_html_block.R",
+    render("/HPVMethyl/inst/methylation/torrent_server_html_block.R",
            output_dir = "./")}
 
 
