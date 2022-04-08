@@ -83,7 +83,7 @@ variants_final_table = single_bar_methyl_variant_filter(variant_table,
                                       user_files$manifest,
                                       user_files$control_definitions, 
                                       user_files$control_freq) %T>%
-  map_df(~ system("zip -j HPVMethyl_outputs.zip read_summary.csv *results.csv"))
+  map_df(~ system("zip -j HPVMethyl_outputs.zip  *results.csv"))
 
 )
 
