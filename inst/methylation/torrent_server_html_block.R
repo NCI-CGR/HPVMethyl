@@ -27,24 +27,9 @@ run_type = plugin_json$runplugin$run_type
 
 cat('
 
-[variant table](./target_variants_results.csv)
 
-[simple pn matrix](./simple_pn_matrix_results.csv)
-
-[detailed pn matrix](./detailed_pn_matrix_results.csv)
-
-[coverage matrix](./coverage_matrix_results.csv)
-
-[frequency matrix](./freq_matrix_results.csv)
-
-[lineage variants](./lineage_variants_results.csv)
-
-[control results](./control_results.csv)
-
-[non-target variant results](./non_target_variants_results.csv)
 
 [archive of outputs](./HPVMethyl_outputs.zip)
-
 
 
 ')
