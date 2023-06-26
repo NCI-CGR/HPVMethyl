@@ -221,10 +221,9 @@ single_bar_methyl_variant_filter <- function(variants, filteringTablePath, posCo
   # calculate mean methyl_freq of qualified sites in each amplicon
   # saved in a wide from
   freq_matrix = tvr_table %>% 
-    mutate(methyl_freq = ifelse(Num_Types_Pos == 1, "NA",methyl_freq)) %>% 
     transform(methyl_freq = as.numeric(methyl_freq)) %>%
     group_by(Owner_Sample_ID, barcode, chr_amplicon) %>%
-    summarize(mean_freq = mean(methyl_freq[status == "Pass"])) %>% 
+    summarize(mean_freq = mean(methyl_freq[status == "Pass"], na.rm=T)) %>% 
     ungroup() %>% 
     group_by(barcode, Owner_Sample_ID) %>% 
     spread(chr_amplicon, mean_freq) %>% 
